@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blide Kours Japan | Premium Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d63031;
+            --primary-dark: #b32d2e;
+            --secondary: #2d3436;
+            --whatsapp: #25D366;
+            --white: #ffffff;
+            --bg-body: #f8f9fa;
+            --radius: 20px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        /* --- Custom Navbar --- */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 18px;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        /* --- Animated Hero --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 60px 25px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* --- Modern Tabs --- */
+        .tabs-container {
+            max-width: 500px;
+            margin: -40px auto 30px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 8px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .tab-menu {
+            display: flex;
+            background: #f1f2f6;
+            border-radius: 15px;
+            padding: 4px;
+        }
+
+        .tab-link {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            background: transparent;
+            font-weight: 600;
+            color: #747d8c;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.85rem;
+        }
+
+        .tab-link.active {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 25px 15px 15px;
+            text-align: center;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-content.active { display: block; }
+
+        .price-tag {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 10px 0;
+            display: block;
+        }
+
+        /* --- Form Styling --- */
+        .form-card {
+            max-width: 500px;
+            margin: 0 auto 50px;
+            padding: 30px 20px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-card h2 {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .input-group { margin-bottom: 20px; }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 2px solid #f1f2f6;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: #fdfdfd;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            background: white;
+            outline: none;
+        }
+
+        /* --- WhatsApp Button Style --- */
+        .wa-btn {
+            width: 100%;
+            padding: 18px;
+            background-color: var(--whatsapp);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s;
+        }
+
+        .wa-btn:active {
+            transform: scale(0.96);
+            box-shadow: none;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.85rem;
+            color: #a4b0be;
+            background: #f1f2f6;
+        }
+
+        /* Decoration Icon */
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            background: #fff5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BLIDE KOURS 🇯🇵</div>
+    </nav>
+
+    <header class="hero">
+        <h1>Bisa Bahasa Jepang Dalam 3 Bulan</h1>
+        <p>Kursus intensif online dengan kurikulum standar JLPT.</p>
+    </header>
+
+    <div class="tabs-container">
+        <div class="tab-menu">
+            <button class="tab-link active" onclick="openTab(event, 'n5')">N5 Dasar</button>
+            <button class="tab-link" onclick="openTab(event, 'n4')">N4 Lanjutan</button>
+            <button class="tab-link" onclick="openTab(event, 'kaiwa')">Kaiwa</button>
+        </div>
+
+        <div id="n5" class="tab-content active">
+            <div class="icon-circle">🌸</div>
+            <h3>Paket N5 (Newbie)</h3>
+            <p style="font-size: 0.9rem; color: #747d8c;">Cocok untuk pemula dari nol. Belajar Hiragana & Kanji Dasar.</p>
+            <span class="price-tag">Rp 500.000</span>
+        </div>
+
+        <div id="n4" class="tab-content">
+            <div class="icon-circle">⛩️</div>
+            <h3>Paket N4 (Intermediate)</h3>
+            <p style="font-size: 0.9rem; color: #747d8c;">Pendalaman tata bahasa kompleks dan persiapan ujian JLPT.</p>
+            <span class="price-tag">Rp 750.000</span>
+        </div>
+
+        <div id="kaiwa" class="tab-content">
+            <div class="icon-circle">🗣️</div>
+            <h3>Paket Kaiwa (Speaking)</h3>
+            <p style="font-size: 0.9rem; color: #747d8c;">Fokus pada percakapan lancar dan kepercayaan diri bicara.</p>
+            <span class="price-tag">Rp 450.000</span>
+        </div>
+    </div>
+
+    <section class="form-card">
+        <h2>Pendaftaran Siswa Baru</h2>
+        
+        <div class="input-group">
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Masukkan nama sesuai KTP">
+        </div>
+
+        <div class="input-group">
+            <label>Pilih Program</label>
+            <select id="paket">
+                <option value="Paket N5 Dasar">Paket N5 Dasar - Rp 500.000</option>
+                <option value="Paket N4 Lanjutan">Paket N4 Lanjutan - Rp 750.000</option>
+                <option value="Paket Kaiwa Percakapan">Paket Kaiwa - Rp 450.000</option>
+            </select>
+        </div>
+        
+        <button onclick="kirimWA()" class="wa-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.539 2.016 2.126-.54c1.029.563 2.025.873 3.162.873h.002c3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.77-5.766zm3.377 8.203c-.145.406-.84.764-1.151.812-.244.037-.56.068-1.637-.369-1.38-.56-2.274-1.938-2.341-2.029-.069-.091-.563-.736-.563-1.405s.347-1.002.47-1.137c.125-.135.271-.169.362-.169s.181.003.26.006c.083.003.195-.032.304.225.113.268.388 1.004.421 1.071.033.067.054.146.01.233-.043.087-.067.151-.133.228s-.141.171-.202.257c-.06.086-.123.18-.052.3.072.119.317.514.681.829.467.404.862.53 1.034.603.172.074.271.062.373-.053.102-.116.442-.505.56-.677.118-.172.235-.143.397-.084.162.059 1.026.474 1.203.56s.294.143.337.218c.043.075.043.434-.102.84z"/></svg>
+            Daftar via WhatsApp
+        </button>
+    </section>
+
+    <footer>
+        <p><strong>Blide Kours Japan</strong></p>
+        <p>Official Contact: 085956683688</p>
+        <p style="margin-top: 10px;">&copy; 2026 Tokyo Study Group</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function kirimWA() {
+            const noWA = "6285956683688";
+            const nama = document.getElementById('nama').value;
+            const paket = document.getElementById('paket').value;
+
+            if (!nama) {
+                alert("Masukkan nama lengkap Anda!");
+                return;
+            }
+
+            const teks = `Halo Admin Blide Kours Japan!%0A%0ASaya ingin mendaftar program kursus:%0A👤 *Nama:* ${nama}%0A📚 *Pilihan Paket:* ${paket}%0A%0AMohon panduan langkah pendaftarannya. Terimakasih!`;
+            
+            window.open(`https://wa.me/${noWA}?text=${teks}`, '_blank');
+        }
+    </script>
+</body>
+</html>
